@@ -10,18 +10,22 @@ class Books extends Component {
             books: [],
             searchField: ''
         }
+        /* this.handleClick = this.handleClick.bind(this); */
     }
 
     searchBook = (e) => {
         e.preventDefault();
+        console.log(this.state.searchField);
         request
             .get("https://www.googleapis.com/books/v1/volumes")
-            .query({ q: this.searchField })
+            .query({ q: this.state.searchField })
             .then((data) => {
                 console.log(data);
                 this.setState({ books: [...data.body.items] })
+                //console.log(this.state.books);
             })
     }
+
 
 
     handleSearch = (e) => {
