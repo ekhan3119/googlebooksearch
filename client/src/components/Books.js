@@ -10,7 +10,8 @@ class Books extends Component {
             books: [],
             searchField: ''
         }
-        /* this.handleClick = this.handleClick.bind(this); */
+        this.handleSearch = this.handleSearch.bind(this);
+        this.searchBook = this.searchBook.bind(this);
     }
 
     searchBook = (e) => {
